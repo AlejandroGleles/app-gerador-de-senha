@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="password_length_label" type="id" />
+    <item name="password_length_seekbar" type="id" />
+    <item name="password_length_value" type="id" />
+    <item name="include_uppercase" type="id" />
+    <item name="include_lowercase" type="id" />
+    <item name="include_numbers" type="id" />
+    <item name="exclude_similar_chars" type="id" />
+    <item name="generate_password_button" type="id" />
+    <item name="generated_password" type="id" />
+    <item name="regenerate_password_button" type="id" />
+    <item name="copy_password_button" type="id" />
+</resources>

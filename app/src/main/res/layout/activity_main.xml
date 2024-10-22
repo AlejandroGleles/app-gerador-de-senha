@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gerador de Senhas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+    <!-- Comprimento da senha -->
+    <TextView
+        android:id="@+id/password_length_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprimento da senha:"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/password_length_seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="20"
+        android:progress="8"
+        app:layout_constraintTop_toBottomOf="@id/password_length_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/password_length_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8 caracteres"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/password_length_seekbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Opções de caracteres -->
+    <CheckBox
+        android:id="@+id/include_uppercase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir letras maiúsculas"
+        app:layout_constraintTop_toBottomOf="@id/password_length_value"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/include_lowercase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir letras minúsculas"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@id/include_uppercase"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/include_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir números"
+        app:layout_constraintTop_toBottomOf="@id/include_lowercase"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/exclude_similar_chars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excluir caracteres semelhantes (ex: '1' e 'l')"
+        app:layout_constraintTop_toBottomOf="@id/include_numbers"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Botão para gerar senha -->
+    <Button
+        android:id="@+id/generate_password_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gerar Senha"
+        app:layout_constraintTop_toBottomOf="@id/exclude_similar_chars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Senha gerada -->
+    <TextView
+        android:id="@+id/generated_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Senha gerada aparecerá aqui"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/generate_password_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botões para regenerar e copiar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/generated_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/regenerate_password_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regenerar"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/copy_password_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copiar" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
